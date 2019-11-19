@@ -9,18 +9,17 @@ public class GroceryList {
     private String _id;
     private String name;
     private double quantities;
-    private boolean isAvailable;
     private String description;
     private double numberOfUnits;
     private double pricePerUnit;
     private double totalAmount;
 
-    public String get_Id() {
+    public String get_id() {
         return _id;
     }
 
-    public void setId(String id) {
-        this._id = id;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -37,14 +36,6 @@ public class GroceryList {
 
     public void setQuantities(double quantities) {
         this.quantities = quantities;
-    }
-
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(boolean available) {
-        isAvailable = available;
     }
 
     public String getDescription() {
@@ -85,7 +76,6 @@ public class GroceryList {
                 "id='" + _id + '\'' +
                 ", name='" + name + '\'' +
                 ", quantities=" + quantities +
-                ", isAvailable=" + isAvailable +
                 ", description='" + description + '\'' +
                 ", numberOfUnits=" + numberOfUnits +
                 ", pricePerUnit=" + pricePerUnit +
