@@ -21,7 +21,22 @@ public class GroceryListImpl implements GroceryListDAO {
 
     @Override
     public GroceryList updateList(GroceryList list) {
-        mongoTemplate.save(list);
-        return list;
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(list.get_id()));
+        Update update = new Update();
+        update.set("name", list.getName());
+        update.set("quantities", list.getQuantities());
+        update.set("description", list.getDescription());
+        update.set("numberOfUnits", list.getNumberOfUnits());
+        update.set("pricePerUnit", list.getPricePerUnit());
+        update.set("totalAmount", list.getTotalAmount());
+        return mongoTemplate.findAndModify(query, update, GroceryList.class);
+    }
+
+    @Override
+    public void deleteById(String listId) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is(listId));
+        mongoTemplate.remove(query, GroceryList.class);
     }
 }
