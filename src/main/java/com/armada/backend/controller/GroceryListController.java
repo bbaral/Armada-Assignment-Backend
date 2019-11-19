@@ -6,10 +6,7 @@ import com.armada.backend.pojo.GroceryList;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,10 @@ public class GroceryListController {
     @RequestMapping(value = "/getAllList", method = RequestMethod.GET, consumes = "application/json", produces = "application/json")
     public List<GroceryList> getAllList() {
         return groceryListImpl.getAllList();
+    }
+
+    @RequestMapping(value = "/updateList", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+    public GroceryList updateList(@RequestBody GroceryList groceryList) {
+        return groceryListImpl.updateList(groceryList);
     }
 }

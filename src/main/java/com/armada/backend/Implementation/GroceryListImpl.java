@@ -18,4 +18,10 @@ public class GroceryListImpl implements GroceryListDAO {
     public List<GroceryList> getAllList() {
         return mongoTemplate.findAll(GroceryList.class);
     }
+
+    @Override
+    public GroceryList updateList(GroceryList list) {
+        mongoTemplate.save(list);
+        return list;
+    }
 }

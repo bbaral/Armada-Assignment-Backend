@@ -7,4 +7,6 @@ import java.util.List;
 public interface GroceryListDAO {
 
     List<GroceryList> getAllList();
+
+    GroceryList updateList(GroceryList person);
 }
