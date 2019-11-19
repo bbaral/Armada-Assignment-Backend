@@ -82,7 +82,7 @@ public class GroceryList {
     @Override
     public String toString() {
         return "GroceryList{" +
-                "id='" + id + '\'' +
+                "id='" + _id + '\'' +
                 ", name='" + name + '\'' +
                 ", quantities=" + quantities +
                 ", isAvailable=" + isAvailable +
