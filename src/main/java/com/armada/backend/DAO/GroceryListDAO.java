@@ -9,4 +9,6 @@ public interface GroceryListDAO {
     List<GroceryList> getAllList();
 
     GroceryList updateList(GroceryList person);
+
+    void deleteById(String listId);
 }
